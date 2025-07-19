@@ -698,10 +698,11 @@ a {
 
 .projects-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px)); 
     gap: 40px;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    justify-content: center;
 }
 
 .project-item {
@@ -761,6 +762,7 @@ a {
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
     margin-bottom: 20px;
+    text-align: justify; 
 }
 
 .project-tech {
@@ -777,6 +779,47 @@ a {
     font-size: 14px;
     font-weight: 500;
     border: 1px solid rgba(240, 61, 61, 0.3);
+}
+.project-tech .repo-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f03d3d;
+    color: #fff;
+    padding: 10px 50px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    box-shadow: 0 4px 10px rgba(240, 61, 61, 0.3);
+    margin-left: 50px; /* Ajuste este valor conforme necessário */
+}
+
+.project-tech .repo-button:hover {
+    background-color: #d93232;
+    transform: scale(1.05);
+}
+.project-tech .imp-button{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f03d3d;
+    color: #fff;
+    padding: 10px 50px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    box-shadow: 0 4px 10px rgba(240, 61, 61, 0.3);
+    margin-left: 37px;
+}
+.project-tech .imp-button:hover{
+    background-color: #d93232;
+    transform: scale(1.05);
 }
 
 
