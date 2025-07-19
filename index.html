@@ -13,11 +13,11 @@
     <nav class="navbar">
         <a href="#" class="logo">Portfolio</a>
         <ul>
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Service</a></li>
-            <li><a href="#">Contact</a></li>
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#about">Sobre Mim</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#experience">Experiência</a></li>
+            <li><a href="#contact">Contato</a></li>
         </ul>
     </nav>
 
@@ -30,47 +30,146 @@
         <div class="bar" style="--i:1;"></div>
     </div>
 
-    <section class="home">
-        <div class="home-info">
+    <section class="home" id="home">
+        <div class="home-content">
             <h1>Eduardo Lima</h1>
             <div class="typewriter-container">
-                <h2 class="typewriter" id="typewriter">Full Stack Developer</h2>
+                <h2 class="typewriter" id="typewriter"></h2>
             </div>
-
-            
-            <div class="description">
-                <p>Estudante de <span class="highlight">Ciência da Computação</span> com experiência prática em desenvolvimento Full Stack.</p>
-                <p>Atualmente estagiando na <span class="highlight">Marinha do Brasil</span>, trabalhando com <span class="highlight">PHP 8.1</span>, <span class="highlight">CodeIgniter 3</span> e <span class="highlight">Oracle</span>.</p>
-                <p>Experiência em projetos com <span class="highlight">Java</span>, <span class="highlight">Python</span>, banco de dados e versionamento com <span class="highlight">Git</span>.</p>
-            </div>
-
             <div class="btn-sci">
-                <a href="Currículo do Eduardo Lima.pdf" class="btn" target="_blank">Currículo</a>
+                <a href="Currículo do Eduardo Lima.pdf" class="btn" target="_blank"><span>Currículo</span></a>
                 <div class="sci">
                     <a href="https://github.com/Eduardolimzz" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="http://linkedin.com/in/eduardo-lima-3b1092316" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>                    
+                </div>                
             </div>
         </div>
+        <div class="particles" id="particles-container"></div>
+    </section>
 
-        <div class="home-img">
-            <div class="img-box">
-                <div class="img-item">
-                    <img 
-                        src="foto_minha.jpg" 
-                        srcset="foto_minha.jpg 1x, foto_minha@2x.jpg 2x"
-                        alt="Eduardo Lima"
-                        class="perfil-img"
-                    />
+    <section class="about section" id="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="img-wrapper">
+                        <img 
+                            src="foto_minha.jpg" 
+                            srcset="foto_minha.jpg 1x, foto_minha@2x.jpg 2x"
+                            alt="Eduardo Lima"
+                            class="about-img"
+                        />
+                    </div>
+                </div>
+                <div class="about-info">
+                    <div class="about-text">
+                        <h3>Resumo de Qualificações</h3>
+                        <p>Estudante de <span class="highlight">Ciência da Computação</span> com experiência prática em Desenvolvimento Full Stack. Atuação com <span class="highlight">PHP 8.1</span>, <span class="highlight">CodeIgniter 3</span>, <span class="highlight">Oracle</span> e tecnologias web em estágio na <span class="highlight">Marinha do Brasil</span>. Experiência em projetos com <span class="highlight">Java</span>, <span class="highlight">Python</span>, banco de dados e versionamento com <span class="highlight">Git</span>. Busco aplicar e expandir meus conhecimentos em desenvolvimento de sistemas e soluções tecnológicas.</p>
+                    </div>
+
+                    <div class="about-details">
+                        <h3>Formação Acadêmica</h3>
+                        <div class="education-item">
+                            <h4>Graduação em Ciência da Computação - IESB</h4>
+                            <p>(3º semestre)</p>
+                        </div>
+                        <div class="education-item">
+                            <h4>Centro Interescolar de Línguas (CIL)</h4>
+                            <p>Certificado de Proficiência em Inglês, Letras - Língua Inglesa e Literaturas de Língua Inglesa</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="skills section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Minhas Habilidades & Certificações</h2>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3>Back-end</h3>
+                    <ul>
+                        <li>PHP 8.1</li>
+                        <li>Java (Spring Boot, Hibernate, JDBC)</li>
+                        <li>Python (Django, PySide6)</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h3>Frameworks</h3>
+                    <ul>
+                        <li>CodeIgniter 3 (HMVC)</li>
+                        <li>Spring Boot</li>
+                        <li>Node.js</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h3>Banco de Dados</h3>
+                    <ul>
+                        <li>Oracle</li>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h3>Ferramentas</h3>
+                    <ul>
+                        <li>Git</li>
+                        <li>GitLab</li>
+                        <li>GitHub</li>
+                        <li>GitHub Pages</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience section" id="experience">
+        <div class="container">
+            <h2 class="section-title">Experiência Profissional</h2>
+            <div class="experience-item">
+                <h3>Estagiário de Desenvolvimento Full Stack - Marinha do Brasil</h3>
+                <p class="date">Maio de 2025 - Presente</p>
+                <ul>
+                    <li>Atuação na manutenção e desenvolvimento de funcionalidades para o portal da Marinha do Brasil.</li>
+                    <li>Melhorias no sistema utilizando PHP 8.1 com o framework CodeIgniter 3 (arquitetura HMVC).</li>
+                    <li>Integração e consulta a banco de dados Oracle utilizando SQL.</li>
+                    <li>Implementação e ajustes no front-end com HTML, CSS, JavaScript e JQuery.</li>
+                    <li>Versionamento de código utilizando GitLab.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-content">
+                <p>Estou sempre aberto a novas oportunidades e desafios! Sinta-se à vontade para entrar em contato.</p>
+                <div class="contact-info">
+                    <p><i class="fab fa-linkedin"></i> <a href="http://linkedin.com/in/eduardo-lima-3b1092316" target="_blank">LinkedIn</a></p>
+                    <p><i class="fab fa-github"></i> <a href="https://github.com/Eduardolimzz" target="_blank">GitHub</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:eduardoaluno1800@gmail.com">eduardoaluno1800@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button class="scroll-to-top" id="scrollToTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="loading" id="loadingScreen">
+        <div class="loading-spinner"></div>
+    </div>
+
     <script>
         // Typewriter effect
         const texts = [
-            "Full Stack Developer"
+            "Desenvolvedor Full Stack",
+            "Criando Soluções Inovadoras",
+            "Transformando Ideias em Código",
+            "Apaixonado por Tecnologia"
         ];
         
         let textIndex = 0;
@@ -103,8 +202,96 @@
             setTimeout(typeWriter, typeSpeed);
         }
         
-        // Start typewriter effect much faster
-        setTimeout(typeWriter, 100); // Mudado de 2000ms para 100ms
+        // Start typewriter effect
+        setTimeout(typeWriter, 100);
+
+        // Script para rolagem suave ao clicar nos links da navbar
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Remove a classe 'active' de todos os itens do menu
+                document.querySelectorAll('nav ul li').forEach(item => {
+                    item.classList.remove('active');
+                });
+                // Adiciona a classe 'active' apenas ao item clicado
+                this.parentElement.classList.add('active');
+            });
+        });
+
+        // Opcional: Atualizar o item ativo na navbar ao rolar a página
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            let currentActive = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Adiciona uma margem para considerar a seção ativa um pouco antes do topo
+                if (pageYOffset >= sectionTop - window.innerHeight / 3) { 
+                    currentActive = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.parentElement.classList.remove('active');
+                if (link.getAttribute('href').includes(currentActive)) {
+                    link.parentElement.classList.add('active');
+                }
+            });
+
+            // Mostrar/Esconder o botão de scroll to top
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            if (window.scrollY > 300) { // Mostra o botão após rolar 300px
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+
+            // Mudar o background da navbar ao rolar
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) { // Adiciona a classe 'scrolled' após rolar 50px
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Funcionalidade do botão de scroll to top
+        document.getElementById('scrollToTopBtn').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Loading screen
+        window.addEventListener('load', () => {
+            const loadingScreen = document.getElementById('loadingScreen');
+            loadingScreen.classList.add('hidden'); // Esconde a tela de carregamento
+        });
+
+        // Gerar partículas dinamicamente (opcional, pode impactar performance em dispositivos mais fracos)
+        document.addEventListener('DOMContentLoaded', () => {
+            const particlesContainer = document.getElementById('particles-container');
+            const numParticles = 20; // Número de partículas
+            for (let i = 0; i < numParticles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `-${Math.random() * 5}s`; // Atraso aleatório para parecer mais natural
+                particle.style.animationDuration = `${5 + Math.random() * 5}s`; // Duração aleatória
+                particle.style.width = `${2 + Math.random() * 5}px`; // Tamanho aleatório
+                particle.style.height = particle.style.width;
+                particle.style.opacity = `${0.3 + Math.random() * 0.7}`;
+                particlesContainer.appendChild(particle);
+            }
+        });
     </script>
 </body>
 </html>
