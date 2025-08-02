@@ -698,7 +698,7 @@ a {
 
 .projects-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 400px)); 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 450px)); 
     gap: 40px;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.2s forwards;
@@ -749,6 +749,38 @@ a {
     border-radius: 50%;
     border: 2px solid rgba(240, 61, 61, 0.3);
 }
+.project-image img.project-img-broad {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1054px/300px; 
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(240, 61, 61, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.project-image img.project-img-broad:hover {
+    transform: scale(1.02);
+    border-color: #f03d3d;
+    box-shadow: 0 8px 25px rgba(240, 61, 61, 0.3);
+}
+
+/* Estilo para a proporção widescreen (por exemplo, 16:9) */
+.project-image img.project-img-wide {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 843px/300px; /* Proporção 16/9 */
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(240, 61, 61, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.project-image img.project-img-wide:hover {
+    transform: scale(1.02);
+    border-color: #f03d3d;
+    box-shadow: 0 8px 25px rgba(240, 61, 61, 0.3);
+}
 
 .project-info h3 {
     font-size: 24px;
@@ -794,7 +826,7 @@ a {
     transition: background-color 0.3s ease, transform 0.2s ease;
     border: none;
     box-shadow: 0 4px 10px rgba(240, 61, 61, 0.3);
-    margin-left: 50px; /* Ajuste este valor conforme necessário */
+    margin-left: 80px; /* Ajuste este valor conforme necessário */
 }
 
 .project-tech .repo-button:hover {
@@ -815,7 +847,7 @@ a {
     transition: background-color 0.3s ease, transform 0.2s ease;
     border: none;
     box-shadow: 0 4px 10px rgba(240, 61, 61, 0.3);
-    margin-left: 37px;
+    margin-left: 70px;
 }
 .project-tech .imp-button:hover{
     background-color: #d93232;
