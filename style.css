@@ -691,169 +691,234 @@ a {
 .skills-category ul li:hover::before {
     transform: scale(1.2);
 }
-/*PROJETOS*/
+
+/* NOVA SEÇÃO DE PROJETOS */
 .projects {
     background: linear-gradient(135deg, #1a1e25 0%, #1f242d 100%);
 }
 
-.projects-content {
+.projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 450px)); 
-    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.2s forwards;
-    justify-content: center;
 }
 
-.project-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 30px;
-    border: 1px solid rgba(240, 61, 61, 0.2);
-    transition: all 0.3s ease;
-    position: relative;
+.project-card {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
     overflow: hidden;
+    border: 1px solid rgba(240, 61, 61, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    backdrop-filter: blur(10px);
+    height: 550px; /* Altura fixa para uniformizar */
+    display: flex;
+    flex-direction: column;
 }
 
-.project-item::before {
+.project-card::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #f03d3d, #ff6b6b, #f03d3d);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover::before {
+    transform: scaleX(1);
+}
+
+.project-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(240, 61, 61, 0.15);
+    border-color: rgba(240, 61, 61, 0.3);
+}
+
+.project-card.featured {
+    border: 2px solid rgba(240, 61, 61, 0.3);
+    background: rgba(240, 61, 61, 0.03);
+}
+
+.project-card.featured::before {
+    height: 4px;
+    background: linear-gradient(135deg, #f03d3d, #ff6b6b, #f03d3d, #ff6b6b);
+    transform: scaleX(1);
+}
+
+.project-header {
+    position: relative;
+    height: 200px; /* Reduzir altura da imagem */
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.project-image-container {
+    position: relative;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(240, 61, 61, 0.1), transparent);
-    transition: left 0.6s ease;
-}
-
-.project-item:hover::before {
-    left: 100%;
-}
-
-.project-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(240, 61, 61, 0.2);
-    border-color: #f03d3d;
+    overflow: hidden;
 }
 
 .project-image {
-    text-align: center;
-    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    filter: brightness(0.9);
 }
 
-.project-image i {
-    font-size: 50px;
+.project-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2a3040, #1f242d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #f03d3d;
-    padding: 20px;
-    background: rgba(240, 61, 61, 0.1);
-    border-radius: 50%;
-    border: 2px solid rgba(240, 61, 61, 0.3);
-}
-.project-image img.project-img-broad {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1054px/300px; 
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid rgba(240, 61, 61, 0.3);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-.project-image img.project-img-broad:hover {
-    transform: scale(1.02);
-    border-color: #f03d3d;
-    box-shadow: 0 8px 25px rgba(240, 61, 61, 0.3);
 }
 
-/* Estilo para a proporção widescreen (por exemplo, 16:9) */
-.project-image img.project-img-wide {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 843px/300px; /* Proporção 16/9 */
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid rgba(240, 61, 61, 0.3);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-.project-image img.project-img-wide:hover {
-    transform: scale(1.02);
-    border-color: #f03d3d;
-    box-shadow: 0 8px 25px rgba(240, 61, 61, 0.3);
+.project-placeholder i {
+    font-size: 60px;
+    opacity: 0.7;
 }
 
-.project-info h3 {
-    font-size: 24px;
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(240, 61, 61, 0.9), rgba(31, 36, 45, 0.9));
+    opacity: 0;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.1);
+}
+
+.project-actions {
+    display: flex;
+    gap: 20px;
+    transform: translateY(20px);
+    transition: transform 0.4s ease 0.1s;
+}
+
+.project-card:hover .project-actions {
+    transform: translateY(0);
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #1f242d;
+    border-radius: 50px;
     font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+}
+
+.action-btn:hover {
+    background: #f03d3d;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(240, 61, 61, 0.3);
+}
+
+.action-btn i {
+    font-size: 16px;
+}
+
+.project-content {
+    padding: 25px;
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-badge {
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    background: linear-gradient(135deg, #f03d3d, #ff6b6b);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(240, 61, 61, 0.3);
+}
+
+.project-title {
+    font-size: 24px;
+    font-weight: 700;
     color: #fff;
     margin-bottom: 15px;
+    margin-top: 10px;
+    line-height: 1.3;
 }
 
-.project-info p {
-    font-size: 16px;
+.project-description {
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
+    line-height: 1.5;
     margin-bottom: 20px;
-    text-align: justify; 
+    text-align: justify;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limita a 4 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-.project-tech {
+.project-tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 6px;
+    margin-top: auto;
 }
 
-.project-tech span {
-    background: rgba(240, 61, 61, 0.2);
+.tech-tag {
+    background: rgba(240, 61, 61, 0.1);
     color: #f03d3d;
-    padding: 5px 12px;
+    padding: 6px 14px;
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
-    border: 1px solid rgba(240, 61, 61, 0.3);
-}
-.project-tech .repo-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #f03d3d;
-    color: #fff;
-    padding: 10px 50px;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: none;
-    box-shadow: 0 4px 10px rgba(240, 61, 61, 0.3);
-    margin-left: 80px; /* Ajuste este valor conforme necessário */
+    border: 1px solid rgba(240, 61, 61, 0.2);
+    transition: all 0.3s ease;
 }
 
-.project-tech .repo-button:hover {
-    background-color: #d93232;
-    transform: scale(1.05);
+.tech-tag:hover {
+    background: rgba(240, 61, 61, 0.2);
+    border-color: rgba(240, 61, 61, 0.4);
+    transform: translateY(-2px);
 }
-.project-tech .imp-button{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #f03d3d;
-    color: #fff;
-    padding: 10px 50px;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: none;
-    box-shadow: 0 4px 10px rgba(240, 61, 61, 0.3);
-    margin-left: 70px;
-}
-.project-tech .imp-button:hover{
-    background-color: #d93232;
-    transform: scale(1.05);
-}
-
 
 /* EXPERIÊNCIA */
 .experience {
@@ -922,7 +987,6 @@ a {
     left: 0;
     top: 0;
 }
-
 
 /* CONTATO */
 .contact {
@@ -1073,6 +1137,10 @@ a {
     .section {
         padding: 80px 7%;
     }
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -1123,6 +1191,10 @@ a {
     .skills-content {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 20px;
+    }
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
     }
 }
 
@@ -1228,6 +1300,32 @@ a {
         min-width: 180px;
         min-height: 180px;
     }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .project-header {
+        height: 220px;
+    }
+
+    .project-content {
+        padding: 25px;
+    }
+
+    .project-title {
+        font-size: 22px;
+    }
+
+    .project-description {
+        font-size: 15px;
+    }
+
+    .action-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1252,13 +1350,13 @@ a {
         height: 45px;
         font-size: 18px;
     }
-    .img-wrapper { /* Este seletor não existe no HTML que você forneceu, se ele for o .home-img .img-box, verifique se está sendo usado corretamente */
+    .img-wrapper {
         width: 180px;
         height: 180px;
         min-width: 180px;
         min-height: 180px;
     }
-    .home-img .img-box { /* Adicionei essa aqui, pois o .img-wrapper não parece existir no seu HTML atual */
+    .home-img .img-box {
         width: 45vw;
         height: 45vw;
         max-width: 200px;
@@ -1280,9 +1378,46 @@ a {
     .contact-info p {
         font-size: 16px;
     }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-header {
+        height: 200px;
+    }
+
+    .project-content {
+        padding: 20px;
+    }
+
+    .project-title {
+        font-size: 20px;
+    }
+
+    .project-description {
+        font-size: 14px;
+    }
+
+    .action-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+        gap: 6px;
+    }
+
+    .project-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .tech-tag {
+        padding: 4px 10px;
+        font-size: 12px;
+    }
 }
 
-/* CUSTOM SCROLLBAR COMMIT*/
+/* CUSTOM SCROLLBAR */
 ::-webkit-scrollbar {
     width: 8px;
 }

@@ -135,86 +135,117 @@
     <section class="projects section" id="projects">
         <div class="container">
             <h2 class="section-title">Meus Projetos</h2>
-            <div class="projects-content">
-        <!--         <div class="project-item">
-                    <div class="project-image">
-                        <i class="fas fa-code"></i>
-                    </div>
-                  <div class="project-info">
-                        <h3>Sistema Web - Marinha do Brasil</h3>
-                        <p>Portal desenvolvido com PHP 8.1 e CodeIgniter 3, integrado com banco Oracle. Funcionalidades de manutenção e desenvolvimento de novas features.</p>
-                        <div class="project-tech">
-                            <span>PHP</span>
-                            <span>CodeIgniter</span>
-                            <span>Oracle</span>
-                            <span>JavaScript</span>
+            <div class="projects-grid">
+                
+                <!-- Projeto 1 - EventosApp -->
+                <div class="project-card featured">
+                    <div class="project-header">
+                        <div class="project-image-container">
+                            <img src="eventosappimg.png" alt="EventosApp" class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://github.com/Eduardolimzz/EventosApp" target="_blank" class="action-btn">
+                                        <i class="fab fa-github"></i>
+                                        <span>Repositório</span>
+                                    </a>
+                                    <!-- <a href="https://javaspringboot-production-a11a.up.railway.app/" target="_blank" class="action-btn">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Deploy</span>
+                                    </a> -->
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
---> 
-
-                <div class="project-item">
-                    <div class="project-image">
-                        <img src="eventosappimg.png" alt="EventosApp" class="project-img-wide">
-                    </div>
-                    <div class="project-info">
-                        <h3>Gestão Profissional de Eventos</h3>
-                        <p>Sistema web completo para gerenciamento de eventos desenvolvido com Java 17 e Spring Boot. Permite criar eventos, gerenciar convidados e confirmar presença via links públicos. Inclui dashboard administrativo, validação de dados e design responsivo moderno.</p>
-                        <div class="project-tech">
-                            <span>Java 17</span>
-                            <span>Spring Boot</span>
-                            <span>MySQL</span>
-                            <span>Thymeleaf</span>
-                            <span>HTML/CSS</span>
-                            <span>JavaScript</span>
-                            <a href="https://github.com/Eduardolimzz/EventosApp" target="_blank" class="repo-button">
-                                <i class="fas fa-link"></i> Repositório
-                            </a>
-                            <a href="https://javaspringboot-production-a11a.up.railway.app/" target="_blank" class="imp-button">
-                                <i class="fas fa-external-link-alt"></i> Implementação
-                            </a>                                             
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-image">
-                        <img src="SEIA.png" alt="Sistema Educacional" class="project-img-broad">
-                    </div>
-                    <div class="project-info">
-                        <h3>Sistema de Visualização de Dados Educacionais</h3>
-                        <p>Este projeto tem como objetivo a criação de um sistema web voltado à visualização e gerenciamento de dados educacionais, como boletins e cursos, com funcionalidades de autenticação, organização por usuários e painel administrativo</p>
-                        <div class="project-tech">
-                            <span>Node.js</span>
-                            <span>JavaScript</span>
-                            <span>Html/CSS</span>
-                            <a href="https://github.com/Eduardolimzz/Projeto-Integrador" target="_blank" class="repo-button">
-                                <i class="fas fa-link"></i> Repositório
-                                <a href="https://modelo-aqwc.vercel.app/" target="_blank" class="imp-button">
-                                    <i class="fas fa-external-link-alt"></i> Implementação
-                                </a>
-                            </a>                                             
+                    <div class="project-content">
+                        <div class="project-badge">Destaque</div>
+                        <h3 class="project-title">Gestão Profissional de Eventos</h3>
+                        <p class="project-description">
+                            Sistema web completo para gerenciamento de eventos. 
+                            Permite criar eventos, gerenciar convidados e confirmar presença via links públicos. 
+                            Inclui dashboard administrativo, validação de dados e design responsivo.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Java 17</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Thymeleaf</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
                         </div>
                     </div>
                 </div>
 
-        <!--          <div class="project-item">
-                    <div class="project-image">
-                        <i class="fas fa-database"></i>
+                <!-- Projeto 2 - Sistema Educacional -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-image-container">
+                            <img src="SEIA.png" alt="Sistema Educacional" class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://github.com/Eduardolimzz/Projeto-Integrador" target="_blank" class="action-btn">
+                                        <i class="fab fa-github"></i>
+                                        <span>Repositório</span>
+                                    </a>
+                                    <a href="https://modelo-aqwc.vercel.app/" target="_blank" class="action-btn">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Deploy</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-info">
-                        <h3>Sistemas de Banco de Dados</h3>
-                        <p>Desenvolvimento e otimização de banco de dados relacionais e NoSQL para diferentes aplicações.</p> commit
-                        <div class="project-tech">
-                            <span>MySQL</span>
-                            <span>MongoDB</span>
-                            <span>Oracle</span>
-                            <span>SQL</span>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema de Visualização de Dados Educacionais</h3>
+                        <p class="project-description">
+                            Sistema web voltado à visualização e gerenciamento de dados educacionais, como boletins e cursos, 
+                            com funcionalidades de autenticação, organização por usuários e painel administrativo completo.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML/CSS</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Projeto 3 - Adicione aqui seu novo projeto -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-image-container">
+                            <div class="project-placeholder">
+                                <i class="fa-regular fa-money-bill-1"></i>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://github.com/Eduardolimzz/investment-aggregator.git" target="_blank" class="action-btn">
+                                        <i class="fab fa-github"></i>
+                                        <span>Repositório</span>
+                                    </a>
+                                    <!-- <a href="#" target="_blank" class="action-btn">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Deploy</span>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Agregador de Investimentos</h3>
+                        <p class="project-description">
+                            Um agregador de investimentos desenvolvido com Spring Boot e MySQL, fornecendo uma API REST para gerenciamento de usuários, contas e ações.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Java 17</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Mockito</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            --> 
         </div>
     </section>
 
